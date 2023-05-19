@@ -1,0 +1,1 @@
+import { Options, Vue } from 'vue-class-component';
