@@ -7,7 +7,7 @@
       ><font-awesome-icon icon="fa-brands fa-instagram" style="color: #231718"
     /></LinkButton>
   </div>
-  <img alt="Vue logo" src="../assets/logo.png" />
+  <img alt="MArtsBalletStudioLogo" src="@/assets/logo.png" />
   <Header />
 </template>
 

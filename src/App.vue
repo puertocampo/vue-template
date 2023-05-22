@@ -3,12 +3,12 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import Top from './views/Top.vue';
+import { Options, Vue } from "vue-class-component";
+import Top from "./containers/Top.vue";
 
 @Options({
   components: {
-    Top
+    Top,
   },
 })
 export default class App extends Vue {}
