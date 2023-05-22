@@ -1,19 +1,14 @@
 <template>
-  <font-awesome-icon icon="fa-solid fa-user-secret" />
-  <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App puertocamp"/> -->
-  <Header />
+  <Top />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
-import Header from './components/molecules/Header.vue';
+import Top from './views/Top.vue';
 
 @Options({
   components: {
-    HelloWorld,
-    Header
+    Top
   },
 })
 export default class App extends Vue {}
