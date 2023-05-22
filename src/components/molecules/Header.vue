@@ -25,22 +25,22 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import Button from '../atoms/HeaderButton.vue';
+import { Options, Vue } from "vue-class-component";
+import Button from "@/components/atoms/HeaderButton.vue";
 
 @Options({
   components: {
-    Button
-  }
+    Button,
+  },
 })
 export default class App extends Vue {}
 </script>
 
 <style>
-  ul {
-    display: flex;
-  }
-  li {
-    list-style: none;
-  }
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+}
 </style>

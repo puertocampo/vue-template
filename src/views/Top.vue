@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Header from "../components/molecules/Header.vue";
+import Header from "@/components/molecules/Header.vue";
 import LinkButton from "@/components/atoms/LinkButton.vue";
 
 @Options({
