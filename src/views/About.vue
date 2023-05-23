@@ -8,21 +8,13 @@
     /></LinkButton>
   </div>
   <img alt="MArtsBalletStudioLogo" src="@/assets/logo.png" />
-  <Header @onClickHeaderButton="onClickHeader" />
+  <Header />
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
-import Header from "@/components/molecules/Header.vue";
-import LinkButton from "@/components/atoms/LinkButton.vue";
-
 const props = defineProps({
   sectionId: String,
 });
-const emits = defineEmits<{ (e: "onClickHeader", value: string): void }>();
-const onClickHeader = (value: string): void => {
-  emits("onClickHeader", value);
-};
 </script>
 
 <style lang="scss" scoped>

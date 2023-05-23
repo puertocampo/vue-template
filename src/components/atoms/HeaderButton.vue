@@ -1,29 +1,34 @@
 <template>
-  <button>{{ buttonName }}</button>
+  <button @click="onClick(props.buttonName || '')">
+    {{ props.buttonName }}
+  </button>
 </template>
 
-<script lang="ts">
-  import { Options, Vue } from 'vue-class-component';
-  
-  @Options({
-    props: {
-      buttonName: String
-    }
-  })
-  export default class HeaderButton extends Vue {
-    buttonName!: string
-  }
+<script setup lang="ts">
+const props = defineProps({
+  buttonName: String,
+  onClick: {
+    type: Function,
+  },
+});
+const emits = defineEmits<{
+  (e: "onClick", value: string): void;
+}>();
+const onClick = (buttonName: string): void => {
+  console.log("onClick", buttonName);
+  emits("onClick", buttonName);
+};
 </script>
 
 <style scoped>
-  button {
-    padding: 0 40px;
-    width: 160px;
+button {
+  padding: 0 40px;
+  width: 160px;
 
-    outline: none;
-    border: none;
-    background-color: transparent;
+  outline: none;
+  border: none;
+  background-color: transparent;
 
-    font-size: 40px;
-  }
+  font-size: 40px;
+}
 </style>

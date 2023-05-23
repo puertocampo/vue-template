@@ -1,39 +1,38 @@
 <template>
   <ul>
     <li>
-      <Button buttonName="Top" />
+      <Button buttonName="Top" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="About" />
+      <Button buttonName="About" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="Class" />
+      <Button buttonName="Class" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="Contact" />
+      <Button buttonName="Contact" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="Guests" />
+      <Button buttonName="Guests" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="Studio" />
+      <Button buttonName="Studio" @onClick="onClickHeaderButton" />
     </li>
     <li>
-      <Button buttonName="Gallery" />
+      <Button buttonName="Gallery" @onClick="onClickHeaderButton" />
     </li>
   </ul>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
+<script setup lang="ts">
 import Button from "@/components/atoms/HeaderButton.vue";
 
-@Options({
-  components: {
-    Button,
-  },
-})
-export default class App extends Vue {}
+const emits = defineEmits<{
+  (e: "onClickHeaderButton", value: string): void;
+}>();
+const onClickHeaderButton = (value: string): void => {
+  emits("onClickHeaderButton", value);
+};
 </script>
 
 <style>

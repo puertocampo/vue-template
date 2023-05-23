@@ -1,17 +1,16 @@
 <template>
-  <Top />
+  <Top :sectionId="'Top'" @onClickHeader="scrollToSection" />
+  <About :sectionId="'About'" />
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import Top from "./containers/Top.vue";
+<script setup lang="ts">
+import Top from "./containers/TopContainer.vue";
+import About from "./containers/About.vue";
 
-@Options({
-  components: {
-    Top,
-  },
-})
-export default class App extends Vue {}
+const scrollToSection = (sectionId: string): void => {
+  const section = document.getElementById(sectionId);
+  section?.scrollIntoView();
+};
 </script>
 
 <style>
