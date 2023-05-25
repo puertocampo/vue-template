@@ -14,7 +14,7 @@ import About from "./containers/About.vue";
 import {
   getWpPosts,
   getWpImages,
-  extractImageByName,
+  filterImagesByName,
 } from "./services/service";
 
 const scrollToSection = (sectionId: string): void => {
@@ -27,7 +27,7 @@ onMounted(async () => {
   posts = await getWpPosts();
   console.log(posts[0]?.content?.rendered);
   const images = await getWpImages();
-  const filteredImage = extractImageByName(images, "logo_landscape");
+  const filteredImage = filterImagesByName(images, "logo_landscape");
   console.log(filteredImage, "filtered!");
 });
 </script>

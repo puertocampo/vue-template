@@ -17,9 +17,12 @@ export const getWpImages = async (): Promise<T.IImage[]> => {
   return res.data;
 };
 
-export const extractImageByName = (images: T.IImage[], imageName: string) => {
+export const filterImagesByName = (
+  images: T.IImage[],
+  filterImageName: string
+) => {
   const filteredImages = images.filter(
-    (image) => image.slug.indexOf(imageName) >= 0
+    (image) => image.slug.indexOf(filterImageName) >= 0
   );
   return filteredImages;
 };
