@@ -11,7 +11,11 @@
 import { onMounted } from "vue";
 import Top from "./containers/TopContainer.vue";
 import About from "./containers/About.vue";
-import { getWpPosts } from "./services/service";
+import {
+  getWpPosts,
+  getWpImages,
+  extractImageByName,
+} from "./services/service";
 
 const scrollToSection = (sectionId: string): void => {
   const section = document.getElementById(sectionId);
@@ -20,9 +24,11 @@ const scrollToSection = (sectionId: string): void => {
 
 var posts: any = null;
 onMounted(async () => {
-  const res = await getWpPosts();
-  posts = res?.data;
-  console.log(posts?.data[0]?.content?.rendered);
+  posts = await getWpPosts();
+  console.log(posts[0]?.content?.rendered);
+  const images = await getWpImages();
+  const filteredImage = extractImageByName(images, "logo_landscape");
+  console.log(filteredImage, "filtered!");
 });
 </script>
 
