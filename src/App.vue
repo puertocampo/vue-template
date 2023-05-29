@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
+import VueScrollTo from 'vue-scrollto';
 import Top from "./containers/TopContainer.vue";
 import About from "./containers/About.vue";
 import {
@@ -18,8 +19,7 @@ import {
 } from "./services/service";
 
 const scrollToSection = (sectionId: string): void => {
-  const section = document.getElementById(sectionId);
-  section?.scrollIntoView();
+  VueScrollTo.scrollTo(`#${sectionId}`, 500);
 };
 
 var posts: any = null;
