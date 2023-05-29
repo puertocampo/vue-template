@@ -7,15 +7,11 @@
 <script setup lang="ts">
 const props = defineProps({
   buttonName: String,
-  onClick: {
-    type: Function,
-  },
 });
 const emits = defineEmits<{
   (e: "onClick", value: string): void;
 }>();
 const onClick = (buttonName: string): void => {
-  console.log("onClick", buttonName);
   emits("onClick", buttonName);
 };
 </script>
