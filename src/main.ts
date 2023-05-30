@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from "pinia";
 import App from './App.vue'
 
 /* import the fontawesome core */
@@ -10,5 +11,6 @@ import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 library.add(faFacebookF, faInstagram)
 
 createApp(App)
+.use(createPinia())
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')

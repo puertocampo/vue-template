@@ -1,4 +1,4 @@
-export interface IPost {
+export interface IArticle {
   id: string;
   title: {
     rendered: string;

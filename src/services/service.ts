@@ -1,7 +1,7 @@
 import { useApi } from "../apis/index";
 import * as T from "../types/index";
 
-export const getWpPosts = async (): Promise<T.IPost[]> => {
+export const getWpArticles = async (): Promise<T.IArticle[]> => {
   const res = await useApi({
     url: "/wp/v2/posts",
     method: "get",
